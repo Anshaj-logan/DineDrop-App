@@ -1,7 +1,10 @@
+import 'package:dinedrop_app/Pages/home/main_food_page.dart';
 import 'package:dinedrop_app/utils/dimensions.dart';
 import 'package:dinedrop_app/widgets/app_icon.dart';
 import 'package:dinedrop_app/widgets/expandable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../utils/colors.dart';
 import '../../widgets/app_column.dart';
@@ -40,8 +43,13 @@ class PopularFoodDetail extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppIcon(
-                    icon: Icons.arrow_back_ios,
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => MainFoodPage());
+                    },
+                    child: AppIcon(
+                      icon: Icons.arrow_back_ios,
+                    ),
                   ),
                   AppIcon(icon: Icons.shopping_cart_outlined)
                 ],
