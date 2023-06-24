@@ -1,10 +1,12 @@
 import 'package:dinedrop_app/controllers/popular_product_controller.dart';
 import 'package:dinedrop_app/controllers/recommended_product_controller.dart';
+import 'package:dinedrop_app/routes/route_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
+import 'Pages/cart/cart_page.dart';
 import 'Pages/food/popular_food_detail.dart';
 import 'Pages/food/recomented_food_detail.dart';
 import 'Pages/home/food_page_body.dart';
@@ -28,10 +30,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home:
+          // CartPage(),
           // FoodPageBody(),
           // RecomentedFoodDetail(),
           // PopularFoodDetail(),
           MainFoodPage(),
+      initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
     );
   }
 }
