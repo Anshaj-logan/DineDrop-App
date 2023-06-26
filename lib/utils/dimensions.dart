@@ -28,6 +28,7 @@ class Dimensions {
   static double font26 = screenHeight / 30.15;
 
   //radius size
+  static double radius15 = screenHeight / 52.26;
   static double radius20 = screenHeight / 39.2;
   static double radius30 = screenHeight / 26.13;
 
@@ -45,4 +46,13 @@ class Dimensions {
 
   //bottomheight
   static double bottomHeightbar120 = screenHeight / 6.53;
+
+  //splash screen
+  static double splashimg = screenHeight / 3.13;
+  static double splastext = screenHeight / 5.22;
+
+  //carthistory
+  static double height100 = screenHeight / 7.84;
+  static double height80 = screenHeight / 9.8;
+  static double height120 = screenHeight / 6.53;
 }
