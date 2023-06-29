@@ -2,7 +2,11 @@ import 'package:dinedrop_app/utils/colors.dart';
 import 'package:dinedrop_app/widgets/big_text.dart';
 import 'package:dinedrop_app/widgets/small_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../controllers/popular_product_controller.dart';
+import '../../controllers/recommended_product_controller.dart';
 import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
@@ -13,10 +17,16 @@ class MainFoodPage extends StatefulWidget {
 }
 
 class _MainFoodPageState extends State<MainFoodPage> {
+  Future<void> _loadResource() async {
+    await Get.find<PopularProductController>().getPopularProductList();
+    await Get.find<RecommendedProductController>().getRecommendedProductList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+        body: RefreshIndicator(
+      child: Column(
         children: [
           Container(
             child: Container(
@@ -66,6 +76,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
           ),
         ],
       ),
-    );
+      onRefresh: _loadResource,
+    ));
   }
 }
