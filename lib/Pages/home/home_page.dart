@@ -1,4 +1,5 @@
 import 'package:dinedrop_app/Pages/account/account_page.dart';
+import 'package:dinedrop_app/Pages/auth/signup_page.dart';
 import 'package:dinedrop_app/Pages/cart/cart_history.dart';
 import 'package:dinedrop_app/Pages/home/main_food_page.dart';
 import 'package:dinedrop_app/utils/colors.dart';
@@ -49,16 +50,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   List<Widget> _buildScreens() {
-    return [
-      MainFoodPage(),
-      Container(
-        child: Center(
-          child: Text("Next Page "),
-        ),
-      ),
-      CartHistory(),
-      AccountScreen()
-    ];
+    return [MainFoodPage(), SignUpPage(), CartHistory(), AccountScreen()];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {

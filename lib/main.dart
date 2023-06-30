@@ -1,3 +1,4 @@
+import 'package:dinedrop_app/Pages/auth/signup_page.dart';
 import 'package:dinedrop_app/controllers/cart_controller.dart';
 import 'package:dinedrop_app/controllers/popular_product_controller.dart';
 import 'package:dinedrop_app/controllers/recommended_product_controller.dart';
@@ -7,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
+import 'Pages/auth/signin_page.dart';
 import 'helper/dependencies.dart' as dep;
 
 Future<void> main() async {
@@ -26,8 +28,9 @@ class MyApp extends StatelessWidget {
       return GetBuilder<RecommendedProductController>(builder: (_) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          initialRoute: RouteHelper.getSplashPage(),
-          getPages: RouteHelper.routes,
+          home: SignInPage(),
+          // initialRoute: RouteHelper.getSplashPage(),
+          // getPages: RouteHelper.routes,
         );
       });
     });
