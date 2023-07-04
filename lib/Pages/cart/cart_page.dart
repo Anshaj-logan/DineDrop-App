@@ -1,5 +1,6 @@
 import 'package:dinedrop_app/Pages/home/main_food_page.dart';
 import 'package:dinedrop_app/base/no_data_page.dart';
+import 'package:dinedrop_app/controllers/auth_controller.dart';
 import 'package:dinedrop_app/controllers/cart_controller.dart';
 import 'package:dinedrop_app/controllers/popular_product_controller.dart';
 import 'package:dinedrop_app/utils/app_constants.dart';
@@ -306,9 +307,12 @@ class CartPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            // popularproduct.addItem(product);
-                            print("tapped");
-                            cartController.addToHistory();
+                            if (Get.find<AuthController>().userLoggedIn()) {
+                              print("tapped");
+                              cartController.addToHistory();
+                            } else {
+                              Get.toNamed(RouteHelper.getSignInPage());
+                            }
                           },
                           child: Container(
                             padding: EdgeInsets.only(

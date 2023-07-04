@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
       return GetBuilder<RecommendedProductController>(builder: (_) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: SignInPage(),
-          // initialRoute: RouteHelper.getSplashPage(),
-          // getPages: RouteHelper.routes,
+          // home: SignInPage(),
+          initialRoute: RouteHelper.getSplashPage(),
+          getPages: RouteHelper.routes,
         );
       });
     });

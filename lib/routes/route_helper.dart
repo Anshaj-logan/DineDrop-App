@@ -1,3 +1,4 @@
+import 'package:dinedrop_app/Pages/auth/signin_page.dart';
 import 'package:dinedrop_app/Pages/cart/cart_page.dart';
 import 'package:dinedrop_app/Pages/food/popular_food_detail.dart';
 import 'package:dinedrop_app/Pages/food/recomented_food_detail.dart';
@@ -13,6 +14,7 @@ class RouteHelper {
   static const String popularFood = "/popular-food";
   static const String recommendedFood = "/recommended-food";
   static const String cartPage = "/cart-page";
+  static const String signIn = "/sign-in";
 
   static String getSplashPage() => '$splashPage';
   static String getinitial() => '$initial';
@@ -21,10 +23,13 @@ class RouteHelper {
   static String getRecommendedFood(int pageId, String page) =>
       '$recommendedFood?pageId=$pageId&page=$page';
   static String getcartPage() => '$cartPage';
+  static String getSignInPage() => '$signIn';
 
   static List<GetPage> routes = [
     GetPage(name: splashPage, page: () => SplashScreen()),
     GetPage(name: initial, page: () => HomePage()),
+    GetPage(
+        name: signIn, page: () => SignInPage(), transition: Transition.fadeIn),
     GetPage(
         name: popularFood,
         page: () {
